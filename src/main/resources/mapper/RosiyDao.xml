@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+	<mapper namespace="org.jack.sy.dao.RosiyDao">
+		<select id="queryById" parameterType="Integer" resultType="Rosiy">
+			SELECT rosiyId , title , url FROM rosiy r WHERE r.rosiyId = #{rosiyId}
+		</select>
+		<select id="queryAll" parameterType="Integer" resultType="Rosiy">
+			SELECT rosiyId , title , url FROM rosiy r ORDER BY r.rosiyId LIMIT LIMIT #{offset}, #{limit}
+		</select>
+	</mapper>
