@@ -21,39 +21,37 @@
       <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
       <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-    <style type="text/css">  
-        body{background: url(img/4.jpg) no-repeat;background-size:cover;font-size: 16px;}  
-        .form{background: rgba(255,255,255,0.2);width:400px;margin:100px auto;}  
-        #login_form{display: block;}  
-        #register_form{display: none;}  
-        .fa{display: inline-block;top: 27px;left: 6px;position: relative;color: #ccc;}  
-        input[type="text"],input[type="password"]{padding-left:26px;}  
-        .checkbox{padding-left:21px;}  
-    </style>  
   </head>
   <body>
   		<div class="container">
-        	<form id="login_form" action="" method="post" class="form-horizontal col-sm-offset-3 col-md-offset-3 mycenter">
-	            <div class="col-sm-9 col-md-9 mysign">
-	                <div class="text-center text-info form-group">
-	                    <h2>请登录</h2>
-	                </div>
-	                <div class="form-group">
-	                    <input type="text" class="form-control" name="username" placeholder="请输入账户名" required autofocus/>
-	                </div>
-	                <div class="form-group">
-	                    <input type="password" class="form-control" name="password" placeholder="请输入密码" required autofocus/>
-	                </div>
-	                <div class="mycheckbox form-group">
-	                    <label class="checkbox">  
-                            <input type="checkbox" name="remember" value="1"/> 记住密码  
-                        </label>  
-	                </div>
-	                <div class="form-group">
-	                    <button type="button" class="btn btn-success">登录</button>
-	                </div>
-	            </div>
-           </form>
+  			<div class="row">
+	        	<form action="" method="post" class="form-horizontal col-md-6 col-sm-8 col-md-offset-3 col-sm-offset-2">
+		            <div class="">
+		                <div class="text-center text-info form-group">
+		                    <h2>请登录</h2>
+		                </div>
+		                <div class="input-group">
+		                	<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+		                    <input type="text" class="form-control" name="username" placeholder="请输入账户名" required autofocus/>
+		                </div>
+		                <div class="input-group">
+		                	<span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+		                    <input type="password" class="form-control" name="password" placeholder="请输入密码" required autofocus/>
+		                </div>
+		                <div class="form-group col-sm-offset-2 col-sm-8">
+		                	<div class="checkbox">
+			                    <label class="checkbox">  
+		                            <input type="checkbox" name="remember" value="1"/> 记住密码  
+		                        </label>  
+			                </div>
+			                <div class="">
+			                    <button type="button" class="btn btn-success">登录</button>
+			                </div>
+		                </div>
+		                
+		            </div>
+	           </form>
+           <div>
        </div>
     </body>
     <script type="text/javascript">
