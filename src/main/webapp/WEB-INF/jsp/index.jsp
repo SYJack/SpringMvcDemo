@@ -10,7 +10,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
-    <title>Bootstrap 101 Template</title>
+    <title>主页</title>
     <script src="${baseResPath}/js/jquery-3.2.1.min.js"></script>
     <script src="${baseResPath}/js/bootstrap.min.js"></script>
     <link href="${baseResPath}/css/bootstrap.min.css" rel="stylesheet">
@@ -25,7 +25,7 @@
   <body>
   		<div class="container">
   			<div class="row">
-	        	<form action="" method="post" class="form-horizontal col-md-6 col-sm-8 col-md-offset-3 col-sm-offset-2">
+	        	<form role="form" action="user/login" method="post" class="form-horizontal col-md-6 col-sm-8 col-md-offset-3 col-sm-offset-2">
 		            <div class="">
 		                <div class="text-center text-info form-group">
 		                    <h2>请登录</h2>
@@ -45,10 +45,9 @@
 		                        </label>  
 			                </div>
 			                <div class="">
-			                    <button type="button" class="btn btn-success">登录</button>
+			                    <button type="submit" class="btn btn-success">登录</button>
 			                </div>
 		                </div>
-		                
 		            </div>
 	           </form>
            <div>
