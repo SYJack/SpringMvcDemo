@@ -23,7 +23,7 @@ public class LoginController {
     @RequestMapping(value = "/login", method = {RequestMethod.POST})
     public String login(HttpServletRequest request,ModelMap map,@RequestParam("username")String username,@RequestParam("password")String password){
     	System.out.println(username);
-		return "index";
+		return "redirect:/index";
     }
 
 }

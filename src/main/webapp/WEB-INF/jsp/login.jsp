@@ -25,7 +25,7 @@
   <body>
   		<div class="container">
   			<div class="row">
-	        	<form action="" method="post" class="form-horizontal col-md-6 col-sm-8 col-md-offset-3 col-sm-offset-2">
+	        	<form role="form" action="login" method="post"class="form-horizontal col-md-6 col-sm-8 col-md-offset-3 col-sm-offset-2">
 		            <div class="">
 		                <div class="text-center text-info form-group">
 		                    <h2>请登录</h2>
@@ -45,7 +45,7 @@
 		                        </label>  
 			                </div>
 			                <div class="">
-			                    <button type="button" class="btn btn-success">登录</button>
+			                    <button type="submit" class="btn btn-success">登录</button>
 			                </div>
 		                </div>
 		                
