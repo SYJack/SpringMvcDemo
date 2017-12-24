@@ -1,7 +1,6 @@
 package org.jack.sy.web;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -23,7 +22,7 @@ public class LoginController {
     @RequestMapping(value = "/login", method = {RequestMethod.POST})
     public String login(HttpServletRequest request,ModelMap map,@RequestParam("username")String username,@RequestParam("password")String password){
     	System.out.println(username);
-		return "redirect:/index";
+		return "redirect:admin/index";
     }
 
 }

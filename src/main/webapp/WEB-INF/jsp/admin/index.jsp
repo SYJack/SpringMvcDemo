@@ -26,6 +26,7 @@
   		<jsp:include page="/WEB-INF/jsp/common/top.jsp"></jsp:include>
   		<div class="container">
   			<div class="row">
+  				<jsp:include page="/WEB-INF/jsp/admin/menu.jsp"></jsp:include>
            <div>
        </div>
     </body>
