@@ -31,15 +31,15 @@
 				<div class="panel panel-default">
 				    <div class="panel-heading">
 						<div class="row">
-					    	<h1 class="col-md-5">学生名单管理</h1>
-							<form class="bs-example bs-example-form col-md-5" role="form" style="margin: 20px 0 10px 0;" action="/admin/selectStudent" id="form1" method="post">
+					    	<h1 class="col-md-5">教师名单管理</h1>
+							<form class="bs-example bs-example-form col-md-5" role="form" style="margin: 20px 0 10px 0;" action="" id="form1" method="post">
 								<div class="input-group">
-									<input type="text" class="form-control" placeholder="请输入姓名" name="findByName">
+									<input type="text" class="form-control" placeholder="请输入教师" name="findByTeacher">
 									<span class="input-group-addon btn" id="sub">搜索</span>
 								</div>
 							</form>
 							<button class="btn btn-default col-md-2" style="margin-top: 20px" onClick="location.href='/admin/addStudent'">
-								添加用户信息
+								添加教师信息
 								<sapn class="glyphicon glyphicon-plus"/>
 							</button>
 
@@ -48,13 +48,10 @@
 				    <table class="table table-bordered">
 				        <thead>
 				            <tr>
-				                <th class="text-center">学号</th>
-			  					<th class="text-center">姓名</th>
+				                <th class="text-center">序号</th>
+			  					<th class="text-center">教师名称</th>
 			  					<th class="text-center">性别</th>
-			  					<th class="text-center">出生年份</th>
-			  					<th class="text-center">入学时间</th>
-			  					<th class="text-center">学院</th>
-			  					<th class="text-center">操作</th>
+			  					<th class="text-center">所属学院</th>
 				            </tr>
 				        </thead>
 				        <tbody>

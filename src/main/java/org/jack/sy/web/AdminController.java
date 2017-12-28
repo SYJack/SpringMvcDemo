@@ -13,8 +13,17 @@ public class AdminController {
 	
 	@RequestMapping(value = "/showStudent",method = {RequestMethod.GET})
 	public String showStudent(HttpServletRequest request,ModelMap map){
-		System.out.println("1111");
 		return "admin/showStudent";
 	}
 
+	@RequestMapping(value = "/showCurriculum",method = {RequestMethod.GET})
+	public String showCurriculum(HttpServletRequest request,ModelMap map){
+		return "admin/showCurriculum";
+	}
+	
+	@RequestMapping(value = "/showTeacher",method = {RequestMethod.GET})
+	public String showTeacher(HttpServletRequest request,ModelMap map){
+		return "admin/showTeacher";
+	}
+	
 }

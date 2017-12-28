@@ -31,15 +31,15 @@
 				<div class="panel panel-default">
 				    <div class="panel-heading">
 						<div class="row">
-					    	<h1 class="col-md-5">学生名单管理</h1>
-							<form class="bs-example bs-example-form col-md-5" role="form" style="margin: 20px 0 10px 0;" action="/admin/selectStudent" id="form1" method="post">
+					    	<h1 class="col-md-5">课程名单管理</h1>
+							<form class="bs-example bs-example-form col-md-5" role="form" style="margin: 20px 0 10px 0;" action="" id="form1" method="post">
 								<div class="input-group">
-									<input type="text" class="form-control" placeholder="请输入姓名" name="findByName">
+									<input type="text" class="form-control" placeholder="请输入课程" name="findByCourse">
 									<span class="input-group-addon btn" id="sub">搜索</span>
 								</div>
 							</form>
 							<button class="btn btn-default col-md-2" style="margin-top: 20px" onClick="location.href='/admin/addStudent'">
-								添加用户信息
+								添加课程信息
 								<sapn class="glyphicon glyphicon-plus"/>
 							</button>
 
@@ -48,12 +48,14 @@
 				    <table class="table table-bordered">
 				        <thead>
 				            <tr>
-				                <th class="text-center">学号</th>
-			  					<th class="text-center">姓名</th>
-			  					<th class="text-center">性别</th>
-			  					<th class="text-center">出生年份</th>
-			  					<th class="text-center">入学时间</th>
-			  					<th class="text-center">学院</th>
+				                <th class="text-center">课程号</th>
+			  					<th class="text-center">课程名称</th>
+			  					<th class="text-center">授课教师</th>
+			  					<th class="text-center">上课时间</th>
+			  					<th class="text-center">上课地点</th>
+			  					<th class="text-center">课程周期</th>
+			  					<th class="text-center">课程类型</th>
+			  					<th class="text-center">课程学分</th>
 			  					<th class="text-center">操作</th>
 				            </tr>
 				        </thead>
