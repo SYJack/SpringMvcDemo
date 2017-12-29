@@ -11,7 +11,7 @@ public class College implements Serializable {
 	private Long id;
 	
 	/**
-	 * 学员编号
+	 * 学院编号
 	 */
 	private Long collegeNumber;
 	
