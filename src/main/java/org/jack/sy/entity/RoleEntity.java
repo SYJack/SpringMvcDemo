@@ -3,7 +3,7 @@ package org.jack.sy.entity;
 import java.io.Serializable;
 import java.util.Random;
 
-public class Role implements Serializable{
+public class RoleEntity implements Serializable{
 	
 	/**
 	 * 角色id
@@ -22,11 +22,11 @@ public class Role implements Serializable{
     
     
     
-	public Role() {
+	public RoleEntity() {
 	}
 
 
-	public Role(Long id, String roleName, String permissions) {
+	public RoleEntity(Long id, String roleName, String permissions) {
 		this.id = id;
 		this.roleName = roleName;
 		this.permissions = permissions;
@@ -66,8 +66,8 @@ public class Role implements Serializable{
 	public boolean equals(Object other) {
 		if ( (this == other ) ) return true;
 		if ( (other == null ) ) return false;
-		if ( !(other instanceof Role) ) return false;
-		Role castOther = ( Role ) other;
+		if ( !(other instanceof RoleEntity) ) return false;
+		RoleEntity castOther = ( RoleEntity ) other;
 		if( this.getId() == null || castOther.getId() == null){
 			return false;
 		}

@@ -3,24 +3,17 @@ package org.jack.sy.entity;
 import java.io.Serializable;
 import java.util.Random;
 
-public class Teacher extends Role implements Serializable {
-	
+public class ManagerEntity implements Serializable{
+
+	/**
+	 * 管理员id
+	 */
 	private Long id;
 	
 	/**
-	 * 教师名字
+	 * 管理员登录账号
 	 */
-	private String teacherName;
-	
-	/**
-	 * 性别:0女，1男
-	 */
-	private Short gender;
-	
-	/**
-	 * 学院id
-	 */
-	private Long collegeId;
+	private String managerName;
 	
 	/**
 	 * 登录密码
@@ -32,24 +25,17 @@ public class Teacher extends Role implements Serializable {
 	 */
 	private Long roleId;
 	
-	public Teacher() {
-	}
-
 	
 
+	public ManagerEntity() {
+	}
 
-	public Teacher(Long id, String teacherName, Short gender, Long collegeId,
-			String passwd, Long roleId) {
+	public ManagerEntity(Long id, String managerName, String passwd, Long roleId) {
 		this.id = id;
-		this.teacherName = teacherName;
-		this.gender = gender;
-		this.collegeId = collegeId;
+		this.managerName = managerName;
 		this.passwd = passwd;
 		this.roleId = roleId;
 	}
-
-
-
 
 	public Long getId() {
 		return id;
@@ -59,40 +45,21 @@ public class Teacher extends Role implements Serializable {
 		this.id = id;
 	}
 
-	public String getTeacherName() {
-		return teacherName;
+	public String getManagerName() {
+		return managerName;
 	}
 
-	public void setTeacherName(String teacherName) {
-		this.teacherName = teacherName;
+	public void setManagerName(String managerName) {
+		this.managerName = managerName;
 	}
 
-	public Short getGender() {
-		return gender;
-	}
-
-	public void setGender(Short gender) {
-		this.gender = gender;
-	}
-
-	public Long getCollegeId() {
-		return collegeId;
-	}
-
-	public void setCollegeId(Long collegeId) {
-		this.collegeId = collegeId;
-	}
-	
-	
 	public String getPasswd() {
 		return passwd;
 	}
 
-
 	public void setPasswd(String passwd) {
 		this.passwd = passwd;
 	}
-	
 
 	public Long getRoleId() {
 		return roleId;
@@ -101,12 +68,12 @@ public class Teacher extends Role implements Serializable {
 	public void setRoleId(Long roleId) {
 		this.roleId = roleId;
 	}
-
+	
 	public boolean equals(Object other) {
 		if ( (this == other ) ) return true;
 		if ( (other == null ) ) return false;
-		if ( !(other instanceof Teacher) ) return false;
-		Teacher castOther = ( Teacher ) other;
+		if ( !(other instanceof ManagerEntity) ) return false;
+		ManagerEntity castOther = ( ManagerEntity ) other;
 		if( this.getId() == null || castOther.getId() == null){
 			return false;
 		}
@@ -120,8 +87,4 @@ public class Teacher extends Role implements Serializable {
 		result += result + (this.getId() == null ? random.nextInt(Integer.MAX_VALUE) : this.getId().hashCode());
 		return result;
 	}
-	
-	
-	
-
 }

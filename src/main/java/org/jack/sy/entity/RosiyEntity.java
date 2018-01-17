@@ -2,7 +2,7 @@ package org.jack.sy.entity;
 
 import java.io.Serializable;
 
-public class Rosiy implements Serializable {
+public class RosiyEntity implements Serializable {
 
 	private Integer rosiId;
 	
@@ -10,10 +10,10 @@ public class Rosiy implements Serializable {
 	
 	private String url;
 	
-	public Rosiy() {
+	public RosiyEntity() {
 	}
 
-	public Rosiy(Integer rosiId, String title, String url) {
+	public RosiyEntity(Integer rosiId, String title, String url) {
 		this.rosiId = rosiId;
 		this.title = title;
 		this.url = url;
@@ -46,8 +46,8 @@ public class Rosiy implements Serializable {
 	public boolean equals(Object other) {
 		if ( (this == other ) ) return true;
 		if ( (other == null ) ) return false;
-		if ( !(other instanceof Rosiy) ) return false;
-		Rosiy castOther = ( Rosiy ) other;
+		if ( !(other instanceof RosiyEntity) ) return false;
+		RosiyEntity castOther = ( RosiyEntity ) other;
 		if( this.getRosiId() == null || castOther.getRosiId() == null){
 			return false;
 		}

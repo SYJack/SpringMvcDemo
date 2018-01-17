@@ -3,7 +3,7 @@ package org.jack.sy.entity;
 import java.io.Serializable;
 import java.util.Random;
 
-public class Student  implements Serializable {
+public class StudentEntity  implements Serializable {
 	
 	/**
 	 * 学生id
@@ -51,13 +51,13 @@ public class Student  implements Serializable {
 	private Long roleId;
 	
 
-	public Student() {
+	public StudentEntity() {
 	}
 
 
 
 
-	public Student(Long id, Long studentId, String stuName, Short gender,
+	public StudentEntity(Long id, Long studentId, String stuName, Short gender,
 			Long birthday, Long entranceTime, Long collegeId, String passwd,
 			Long roleId) {
 		this.id = id;
@@ -154,8 +154,8 @@ public class Student  implements Serializable {
 	public boolean equals(Object other) {
 		if ( (this == other ) ) return true;
 		if ( (other == null ) ) return false;
-		if ( !(other instanceof Student) ) return false;
-		Student castOther = ( Student ) other;
+		if ( !(other instanceof StudentEntity) ) return false;
+		StudentEntity castOther = ( StudentEntity ) other;
 		if( this.getId() == null || castOther.getId() == null){
 			return false;
 		}
