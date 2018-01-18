@@ -53,99 +53,100 @@ public class BaseDao<T, PK extends Serializable> extends SqlSessionDaoSupport im
 	public String getNampSpace() {
 		Class<T> clazz = (Class) GenericsUtils.getSuperClassGenricType(this.getClass());
 		String simpleName = clazz.getSimpleName() + POSTFIX;
+		System.out.println("AAAAA"+simpleName);
 		return simpleName;
 	}
 
-	public int insert(T entity) {
-		return getSqlSession().insert((this.getNampSpace().contains("Entity")
-				? this.getNampSpace().replace("Entity", "") : this.getNampSpace()) + _INSERT, entity);
-	}
-	
-	 public int insertSelective(T record) {  
-	        return getSqlSession().insert(  
-	                (this.getNampSpace().contains("Entity") ? this.getNampSpace().replace("Entity", "")  
-	                        : this.getNampSpace()) + _INSERTSELECTIVE, record);  
-	    }  
-	  
-	    public T selectByPrimaryKey(PK id) {  
-	        return getSqlSession().selectOne(  
-	                (this.getNampSpace().contains("Entity") ? this.getNampSpace().replace("Entity", "")  
-	                        : this.getNampSpace()) + _SELECTBYPRIMARYKEY, id);  
-	    }  
-	  
-	      
-	    public int updateByPrimaryKey(T record) {  
-	        return getSqlSession().update(  
-	                (this.getNampSpace().contains("Entity") ? this.getNampSpace().replace("Entity", "")  
-	                        : this.getNampSpace()) + _UPDATEBYPRIMARYKEY, record);  
-	    }  
-	  
-	    public int updateByPrimaryKeySelective(T record) {  
-	        return getSqlSession().update(  
-	                (this.getNampSpace().contains("Entity") ? this.getNampSpace().replace("Entity", "")  
-	                        : this.getNampSpace()) + _UPDATEBYPRIMARYKEYSELECTIVE, record);  
-	    }  
-	  
-	    public int deleteByPrimaryKey(PK id) {  
-	        return getSqlSession().delete(  
-	                (this.getNampSpace().contains("Entity") ? this.getNampSpace().replace("Entity", "")  
-	                        : this.getNampSpace()) + _DELETEBYPRIMARYKEY, id);  
-	    }  
-	  
-	    /*@SuppressWarnings({ "rawtypes", "unchecked" })  
-	    public PageInfo<T> pageFind(String statementKey, PageForm pageForm, Object parameter,  
-	            Boolean isSimplePage) throws IllegalAccessException, InvocationTargetException, NoSuchMethodException {  
-	        Map params = new HashMap();  
-	        if (parameter != null) {  
-	            if (parameter instanceof Map) {  
-	                params.putAll((Map) parameter);  
-	            } else {  
-	                Map parameterObject = PropertyUtils.describe(parameter);  
-	                params.putAll(parameterObject);  
-	            }  
-	        }  
-	        PageHelper.startPage(pageForm.getPage(), pageForm.getRows());  
-	        List<T> list = getSqlSession().selectList(statementKey, params);  
-	        PageInfo<T> pageInfo = new PageInfo(list);  
-	  
-	        return pageInfo;  
-	    }  */
-	  
-	    @SuppressWarnings({ "rawtypes", "unchecked" })  
-	    public List<T> findTop(int top, String statementKey, Object parameter) throws IllegalAccessException, InvocationTargetException, NoSuchMethodException {  
-	        Map params = new HashMap();  
-	        if (parameter != null) {  
-	            if (parameter instanceof Map) {  
-	                params.putAll((Map) parameter);  
-	            } else {  
-	                Map parameterObject = PropertyUtils.describe(parameter);  
-	                params.putAll(parameterObject);  
-	            }  
-	        }  
-	        List<T> list = getSqlSession().selectList(statementKey, params, new RowBounds(0, top));  
-	        return list;  
-	    }  
-	  
-	    public T findTopOne(String statementKey, Object parameter) throws IllegalAccessException, InvocationTargetException, NoSuchMethodException {  
-	        List<T> list = findTop(1, statementKey, parameter);  
-	        return CollectionUtils.isEmpty(list) ? null : list.get(0);  
-	    }  
-	      
-	    /*@SuppressWarnings({ "rawtypes", "unchecked" })  
-	    public <M> PageInfo<M> pageFindModel(String statementKey, PageForm pageForm, Object parameter) throws IllegalAccessException, InvocationTargetException, NoSuchMethodException {  
-	        Map params = new HashMap();  
-	        if (parameter != null) {  
-	            if (parameter instanceof Map) {  
-	                params.putAll((Map) parameter);  
-	            } else {  
-	                Map parameterObject = PropertyUtils.describe(parameter);  
-	                params.putAll(parameterObject);  
-	            }  
-	        }  
-	        PageHelper.startPage(pageForm.getPage(), pageForm.getRows());  
-	        List<M> list = getSqlSession().selectList(statementKey, params);  
-	        PageInfo<M> pageInfo = new PageInfo(list);  
-	  
-	        return pageInfo;  
-	    }*/
+//	public int insert(T entity) {
+//		return getSqlSession().insert((this.getNampSpace().contains("Entity")
+//				? this.getNampSpace().replace("Entity", "") : this.getNampSpace()) + _INSERT, entity);
+//	}
+//
+// 	public int insertSelective(T record) {  
+//        return getSqlSession().insert(  
+//                (this.getNampSpace().contains("Entity") ? this.getNampSpace().replace("Entity", "")  
+//                        : this.getNampSpace()) + _INSERTSELECTIVE, record);  
+//    }  
+  
+    public T selectByPrimaryKey(PK id) {  
+        return getSqlSession().selectOne(  
+                (this.getNampSpace().contains("Entity") ? this.getNampSpace().replace("Entity", "")  
+                        : this.getNampSpace()) + _SELECTBYPRIMARYKEY, id);  
+    }  
+  
+      
+//    public int updateByPrimaryKey(T record) {  
+//        return getSqlSession().update(  
+//                (this.getNampSpace().contains("Entity") ? this.getNampSpace().replace("Entity", "")  
+//                        : this.getNampSpace()) + _UPDATEBYPRIMARYKEY, record);  
+//    }  
+//  
+//    public int updateByPrimaryKeySelective(T record) {  
+//        return getSqlSession().update(  
+//                (this.getNampSpace().contains("Entity") ? this.getNampSpace().replace("Entity", "")  
+//                        : this.getNampSpace()) + _UPDATEBYPRIMARYKEYSELECTIVE, record);  
+//    }  
+//  
+//    public int deleteByPrimaryKey(PK id) {  
+//        return getSqlSession().delete(  
+//                (this.getNampSpace().contains("Entity") ? this.getNampSpace().replace("Entity", "")  
+//                        : this.getNampSpace()) + _DELETEBYPRIMARYKEY, id);  
+//    }  
+//  
+//    /*@SuppressWarnings({ "rawtypes", "unchecked" })  
+//    public PageInfo<T> pageFind(String statementKey, PageForm pageForm, Object parameter,  
+//            Boolean isSimplePage) throws IllegalAccessException, InvocationTargetException, NoSuchMethodException {  
+//        Map params = new HashMap();  
+//        if (parameter != null) {  
+//            if (parameter instanceof Map) {  
+//                params.putAll((Map) parameter);  
+//            } else {  
+//                Map parameterObject = PropertyUtils.describe(parameter);  
+//                params.putAll(parameterObject);  
+//            }  
+//        }  
+//        PageHelper.startPage(pageForm.getPage(), pageForm.getRows());  
+//        List<T> list = getSqlSession().selectList(statementKey, params);  
+//        PageInfo<T> pageInfo = new PageInfo(list);  
+//  
+//        return pageInfo;  
+//    }  */
+//  
+//    @SuppressWarnings({ "rawtypes", "unchecked" })  
+//    public List<T> findTop(int top, String statementKey, Object parameter) throws IllegalAccessException, InvocationTargetException, NoSuchMethodException {  
+//        Map params = new HashMap();  
+//        if (parameter != null) {  
+//            if (parameter instanceof Map) {  
+//                params.putAll((Map) parameter);  
+//            } else {  
+//                Map parameterObject = PropertyUtils.describe(parameter);  
+//                params.putAll(parameterObject);  
+//            }  
+//        }  
+//        List<T> list = getSqlSession().selectList(statementKey, params, new RowBounds(0, top));  
+//        return list;  
+//    }  
+//  
+//    public T findTopOne(String statementKey, Object parameter) throws IllegalAccessException, InvocationTargetException, NoSuchMethodException {  
+//        List<T> list = findTop(1, statementKey, parameter);  
+//        return CollectionUtils.isEmpty(list) ? null : list.get(0);  
+//    }  
+      
+    /*@SuppressWarnings({ "rawtypes", "unchecked" })  
+    public <M> PageInfo<M> pageFindModel(String statementKey, PageForm pageForm, Object parameter) throws IllegalAccessException, InvocationTargetException, NoSuchMethodException {  
+        Map params = new HashMap();  
+        if (parameter != null) {  
+            if (parameter instanceof Map) {  
+                params.putAll((Map) parameter);  
+            } else {  
+                Map parameterObject = PropertyUtils.describe(parameter);  
+                params.putAll(parameterObject);  
+            }  
+        }  
+        PageHelper.startPage(pageForm.getPage(), pageForm.getRows());  
+        List<M> list = getSqlSession().selectList(statementKey, params);  
+        PageInfo<M> pageInfo = new PageInfo(list);  
+  
+        return pageInfo;  
+    }*/
 }

@@ -1,18 +1,19 @@
-import org.jack.sy.dao.RosiyDao;
-import org.jack.sy.entity.RosiyEntity;
+import javax.annotation.Resource;
+
+import org.jack.sy.entity.StudentEntity;
+import org.jack.sy.service.StudentService;
 import org.junit.Test;
-import org.springframework.beans.factory.annotation.Autowired;
 
 
 public class RosiyDaoTest extends BaseTest{
 	
-	@Autowired
-	private RosiyDao rosiyDao;
+	@Resource(name="studentService")
+	private StudentService studentService;
 	
 	@Test
 	public void testQueryById() throws Exception {
-		int rosiyId = 1;
-		RosiyEntity rosiy = rosiyDao.queryById(rosiyId);
+		int id = 1;
+		StudentEntity rosiy = studentService.selectByPrimaryKey(String.valueOf(id));
 		System.out.println(rosiy);
 	}
 	

@@ -48,4 +48,10 @@
 		<!-- 给出需要扫描Dao接口包 -->
 		<property name="basePackage" value="org.jack.sy.dao" />
 	</bean>
+	
+	<bean id="baseDao" class="org.jack.sy.dao.BaseDao">  
+    	<property name="sqlSessionFactory" ref="sqlSessionFactory" />  
+	</bean>  
+	<bean id="studentDao" class="org.jack.sy.service.impl.StudentServiceImpl" parent="baseDao">         
+	</bean>  
 </beans>
