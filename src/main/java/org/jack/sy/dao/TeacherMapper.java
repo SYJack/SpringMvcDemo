@@ -5,8 +5,7 @@ package org.jack.sy.dao;
 
 /**
  * @author jack
- *
  */
-public interface CurriculumDao {
+public interface TeacherMapper {
 
 }

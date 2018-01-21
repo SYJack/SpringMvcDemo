@@ -3,14 +3,24 @@
  */
 package org.jack.sy.service.impl;
 
+import javax.annotation.Resource;
+
+import org.jack.sy.dao.StudentMapper;
+import org.jack.sy.entity.StudentEntity;
 import org.jack.sy.service.StudentService;
 import org.springframework.stereotype.Service;
 
 /**
  * @author jack
  */
-@Service("studentService")
-public class StudentServiceImpl extends CommonServiceImpl implements StudentService{
+@Service("studentServiceimpl")
+public class StudentServiceImpl implements StudentService{
+
+	@Resource(name="studentMapper")
+	private StudentMapper studentMapper;
+	public StudentEntity selectByPrimaryKey(Long id) {
+		return studentMapper.selectByPrimaryKey(id);
+	}
 
 
 }

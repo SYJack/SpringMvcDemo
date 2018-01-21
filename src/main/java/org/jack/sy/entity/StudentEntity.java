@@ -169,6 +169,12 @@ public class StudentEntity  implements Serializable {
 		result += result + (this.getId() == null ? random.nextInt(Integer.MAX_VALUE) : this.getId().hashCode());
 		return result;
 	}
-	
+
+	@Override
+	public String toString() {
+		return "StudentEntity [id=" + id + ", studentId=" + studentId + ", stuName=" + stuName + ", gender=" + gender
+				+ ", birthday=" + birthday + ", entranceTime=" + entranceTime + ", collegeId=" + collegeId + ", passwd="
+				+ passwd + ", roleId=" + roleId + "]";
+	}
 
 }

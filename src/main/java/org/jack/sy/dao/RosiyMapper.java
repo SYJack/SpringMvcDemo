@@ -5,7 +5,7 @@ import java.util.List;
 import org.apache.ibatis.annotations.Param;
 import org.jack.sy.entity.RosiyEntity;
 
-public interface RosiyDao {
+public interface RosiyMapper {
 
 	/**
 	 * @param id
