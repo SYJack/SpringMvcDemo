@@ -17,6 +17,9 @@
 	 <sql id="Base_Column_List">
         ID,STUDENTID,STUNAME,GENDER,BIRTHDAY,ENTRANCETIME,COLLEGEID,PASSWD,ROLEID
     </sql>
+    <insert id="insert">
+    
+    </insert>
 	<select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="Long">
 		select
 		<include refid="Base_Column_List"/>
@@ -27,4 +30,6 @@
 		 delete from student
          where ID = #{id,jdbcType=BIGINT}
 	</delete>
+	<update id="updateByPrimaryKey" parameterType="org.jack.sy.entity.StudentEntity">
+	</update>
 </mapper>
