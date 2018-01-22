@@ -18,8 +18,17 @@ public class StudentServiceImpl implements StudentService{
 
 	@Resource(name="studentMapper")
 	private StudentMapper studentMapper;
+	
 	public StudentEntity selectByPrimaryKey(Long id) {
 		return studentMapper.selectByPrimaryKey(id);
+	}
+	@Override
+	public Integer updateByPrimaryKey(StudentEntity studentEntity) {
+		return studentMapper.updateByPrimaryKey(studentEntity);
+	}
+	@Override
+	public Integer insertStudent(StudentEntity studentEntity) {
+		return studentMapper.insert(studentEntity);
 	}
 
 

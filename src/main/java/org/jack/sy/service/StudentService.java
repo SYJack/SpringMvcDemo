@@ -11,4 +11,8 @@ import org.jack.sy.entity.StudentEntity;
 public interface StudentService{
 
 	public StudentEntity selectByPrimaryKey(Long id);
+	
+	public Integer updateByPrimaryKey(StudentEntity studentEntity);
+	
+	public Integer insertStudent(StudentEntity studentEntity);
 }
