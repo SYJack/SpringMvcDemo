@@ -12,7 +12,9 @@ public interface StudentService{
 
 	public StudentEntity selectByPrimaryKey(Long id);
 	
-	public Integer updateByPrimaryKey(StudentEntity studentEntity);
+	public Boolean updateByPrimaryKey(StudentEntity studentEntity);
 	
-	public Integer insertStudent(StudentEntity studentEntity);
+	public Boolean insertStudent(StudentEntity studentEntity);
+	
+	public Boolean deleteByPrimaryKey(Long id);
 }

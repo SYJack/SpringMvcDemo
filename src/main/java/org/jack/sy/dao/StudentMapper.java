@@ -12,16 +12,16 @@ import org.springframework.stereotype.Repository;
 @Repository("studentMapper")
 public interface StudentMapper {
 
-	int deleteByPrimaryKey(Long id);
+	Boolean deleteByPrimaryKey(Long id);
 
-	int insert(StudentEntity record);
+	Boolean insert(StudentEntity record);
 
-	int insertSelective(StudentEntity record);
+	Boolean insertSelective(StudentEntity record);
 
 	StudentEntity selectByPrimaryKey(Long id);
 
-	int updateByPrimaryKeySelective(StudentEntity record);
+	Boolean updateByPrimaryKeySelective(StudentEntity record);
 
-	int updateByPrimaryKey(StudentEntity record);
+	Boolean updateByPrimaryKey(StudentEntity record);
 
 }

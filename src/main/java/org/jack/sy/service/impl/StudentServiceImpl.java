@@ -23,12 +23,36 @@ public class StudentServiceImpl implements StudentService{
 		return studentMapper.selectByPrimaryKey(id);
 	}
 	@Override
-	public Integer updateByPrimaryKey(StudentEntity studentEntity) {
-		return studentMapper.updateByPrimaryKey(studentEntity);
+	public Boolean updateByPrimaryKey(StudentEntity studentEntity) {
+		if(studentEntity.getId() == null || studentEntity == null ){
+			throw new RuntimeException("参数对象为空");
+		}
+		StudentEntity po = studentMapper.selectByPrimaryKey(studentEntity.getId());
+		if(po==null){
+			throw new RuntimeException("没有这个学生");
+		}
+		studentMapper.updateByPrimaryKey(studentEntity);
+		return Boolean.TRUE;
 	}
 	@Override
-	public Integer insertStudent(StudentEntity studentEntity) {
-		return studentMapper.insert(studentEntity);
+	public Boolean insertStudent(StudentEntity studentEntity) {
+		if(studentEntity == null ){
+			throw new RuntimeException("参数对象为空");
+		}
+		studentMapper.insert(studentEntity);
+		return Boolean.TRUE;
+	}
+	@Override
+	public Boolean deleteByPrimaryKey(Long id) {
+		if( id == null ){
+			throw new RuntimeException("id为空");
+		}
+		StudentEntity po = studentMapper.selectByPrimaryKey(id);
+		if(po==null){
+			throw new RuntimeException("没有这个学生");
+		}
+		studentMapper.deleteByPrimaryKey(id);
+		return Boolean.TRUE;
 	}
 
 
