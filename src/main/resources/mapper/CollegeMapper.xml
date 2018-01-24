@@ -2,67 +2,43 @@
 <!DOCTYPE mapper
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="org.jack.sy.dao.StudentMapper">
+<mapper namespace="org.jack.sy.dao.CollegeMapper">
 
-	<resultMap type="org.jack.sy.entity.StudentEntity" id="BaseResultMap">
+	<resultMap type="org.jack.sy.entity.CollegeEntity" id="BaseResultMap">
 		<id column="ID" property="id" jdbcType="BIGINT"/>
-		<result column="STUDENTID" property="studentId" jdbcType="BIGINT"/>
-		<result column="STUNAME" property="stuName" jdbcType="VARCHAR"/>
-		<result column="GENDER" property="gender" jdbcType="SMALLINT"/>
-		<result column="BIRTHDAY" property="birthday" jdbcType="BIGINT"/>
-		<result column="ENTRANCETIME" property="entranceTime" jdbcType="BIGINT"/>
-		<result column="COLLEGEID" property="collegeId" jdbcType="BIGINT"/>
-		<result column="PASSWD" property="passwd" jdbcType="VARCHAR"/>
-		<result column="ROLEID" property="roleId" jdbcType="BIGINT"/>
+		<result column="COLLEGENUMBER" property="collegeNumber" jdbcType="BIGINT"/>
+		<result column="COLLEGENAME" property="collegeName" jdbcType="VARCHAR"/>
 	</resultMap>
 	
 	 <sql id="Base_Column_List">
-        ID,STUDENTID,STUNAME,GENDER,BIRTHDAY,ENTRANCETIME,COLLEGEID,PASSWD,ROLEID
+        ID,COLLEGENUMBER,COLLEGENAME
     </sql>
     
-    <insert id="insert" parameterType="org.jack.sy.entity.StudentEntity">
-    	insert into student (STUDENTID,STUNAME,GENDER,BIRTHDAY,ENTRANCETIME,COLLEGEID,PASSWD,ROLEID)
-    	values(#{studentId},#{stuName},#{gender},#{birthday},#{entranceTime},#{collegeId},#{passwd},#{roleId})
+    <insert id="insert" parameterType="org.jack.sy.entity.CollegeEntity">
+    	insert into college (collegeNumber,collegeName)
+    	values(#{collegeNumber},#{collegeName})
     </insert>
     
 	<select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="Long">
 		select
 		<include refid="Base_Column_List"/>
-		from student
+		from college
 		where ID = #{id,jdbcType=BIGINT} limit 1
 	</select>
 	
 	<delete id="deleteByPrimaryKey" parameterType="Long">
-		 delete from student
+		 delete from college
          where ID = #{id,jdbcType=BIGINT}
 	</delete>
 	
-	<update id="updateByPrimaryKey" parameterType="org.jack.sy.entity.StudentEntity">
-		update student
+	<update id="updateByPrimaryKey" parameterType="org.jack.sy.entity.CollegeEntity">
+		update college
 		<trim prefix="set" suffixOverrides=",">
-			<if test="studentId!=null">
-				STUDENTID = #{studentId,jdbcType=BIGINT},
+			<if test="collegeNumber!=null">
+				COLLEGENUMBER = #{collegeNumber,jdbcType=BIGINT},
 			</if>
-			<if test="stuName!=null and stuName!=''">
-				STUNAME = #{stuName,jdbcType=VARCHAR},
-			</if>
-			<if test="gender!=null">
-				GENDER = #{gender,jdbcType=SMALLINT},
-			</if>
-			<if test="birthday!=null">
-				BIRTHDAY = #{birthday,jdbcType=BIGINT},
-			</if>
-			<if test="entranceTime!=null">
-				ENTRANCETIME = #{entranceTime,jdbcType=BIGINT},
-			</if>
-			<if test="collegeId!=null">
-				COLLEGEID = #{collegeId,jdbcType=BIGINT},
-			</if>
-			<if test="passwd!=null and passwd!=''">
-				PASSWD = #{passwd,jdbcType=VARCHAR},
-			</if>
-			<if test="roleId!=null">
-				ROLEID = #{roleId,jdbcType=BIGINT}
+			<if test="collegeName!=null and collegeName!=''">
+				COLLEGENAME = #{collegeName,jdbcType=VARCHAR},
 			</if>
 		</trim>
 		where ID = #{id,jdbcType=BIGINT}

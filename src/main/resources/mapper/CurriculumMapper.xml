@@ -2,67 +2,67 @@
 <!DOCTYPE mapper
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="org.jack.sy.dao.StudentMapper">
+<mapper namespace="org.jack.sy.dao.CurriculumMapper">
 
-	<resultMap type="org.jack.sy.entity.StudentEntity" id="BaseResultMap">
+	<resultMap type="org.jack.sy.entity.CurriculumEntity" id="BaseResultMap">
 		<id column="ID" property="id" jdbcType="BIGINT"/>
+		<result column="CURRICULUMNAME" property="curriculumName" jdbcType="BIGINT"/>
+		<result column="TEACHERID" property="teacherId" jdbcType="BIGINT"/>
 		<result column="STUDENTID" property="studentId" jdbcType="BIGINT"/>
-		<result column="STUNAME" property="stuName" jdbcType="VARCHAR"/>
-		<result column="GENDER" property="gender" jdbcType="SMALLINT"/>
-		<result column="BIRTHDAY" property="birthday" jdbcType="BIGINT"/>
-		<result column="ENTRANCETIME" property="entranceTime" jdbcType="BIGINT"/>
-		<result column="COLLEGEID" property="collegeId" jdbcType="BIGINT"/>
-		<result column="PASSWD" property="passwd" jdbcType="VARCHAR"/>
-		<result column="ROLEID" property="roleId" jdbcType="BIGINT"/>
+		<result column="CLASSTIME" property="classTime" jdbcType="VARCHAR"/>
+		<result column="CLASSPLACE" property="classPlace" jdbcType="VARCHAR"/>
+		<result column="CLASSWEEKLY" property="classWeekly" jdbcType="VARCHAR"/>
+		<result column="CURRICULUMTYPE" property="curriculumType" jdbcType="SMALLINT"/>
+		<result column="CREDIT" property="credit" jdbcType="VARCHAR"/>
 	</resultMap>
 	
 	 <sql id="Base_Column_List">
-        ID,STUDENTID,STUNAME,GENDER,BIRTHDAY,ENTRANCETIME,COLLEGEID,PASSWD,ROLEID
+        ID,CURRICULUMNAME,TEACHERID,STUDENTID,CLASSTIME,CLASSPLACE,CLASSWEEKLY,CURRICULUMTYPE,CREDIT
     </sql>
     
-    <insert id="insert" parameterType="org.jack.sy.entity.StudentEntity">
-    	insert into student (STUDENTID,STUNAME,GENDER,BIRTHDAY,ENTRANCETIME,COLLEGEID,PASSWD,ROLEID)
-    	values(#{studentId},#{stuName},#{gender},#{birthday},#{entranceTime},#{collegeId},#{passwd},#{roleId})
+    <insert id="insert" parameterType="org.jack.sy.entity.CurriculumEntity">
+    	insert into curriculum (CURRICULUMNAME,TEACHERID,STUDENTID,CLASSTIME,CLASSPLACE,CLASSWEEKLY,CURRICULUMTYPE,CREDIT)
+    	values(#{curriculumName},#{teacherId},#{studentId},#{classTime},#{classPlace},#{classWeekly},#{curriculumType},#{credit})
     </insert>
     
 	<select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="Long">
 		select
 		<include refid="Base_Column_List"/>
-		from student
+		from curriculum
 		where ID = #{id,jdbcType=BIGINT} limit 1
 	</select>
 	
 	<delete id="deleteByPrimaryKey" parameterType="Long">
-		 delete from student
+		 delete from curriculum
          where ID = #{id,jdbcType=BIGINT}
 	</delete>
 	
-	<update id="updateByPrimaryKey" parameterType="org.jack.sy.entity.StudentEntity">
-		update student
+	<update id="updateByPrimaryKey" parameterType="org.jack.sy.entity.CurriculumEntity">
+		update curriculum
 		<trim prefix="set" suffixOverrides=",">
-			<if test="studentId!=null">
-				STUDENTID = #{studentId,jdbcType=BIGINT},
+			<if test="curriculumName!=null">
+				CURRICULUMNAME = #{curriculumName,jdbcType=BIGINT},
 			</if>
-			<if test="stuName!=null and stuName!=''">
-				STUNAME = #{stuName,jdbcType=VARCHAR},
+			<if test="stuName!=null">
+				TEACHERID = #{teacherId,jdbcType=BIGINT},
 			</if>
 			<if test="gender!=null">
-				GENDER = #{gender,jdbcType=SMALLINT},
+				STUDENTID = #{studentId,jdbcType=BIGINT},
 			</if>
-			<if test="birthday!=null">
-				BIRTHDAY = #{birthday,jdbcType=BIGINT},
+			<if test="classTime!=null and classTime!=''">
+				CLASSTIME = #{classTime,jdbcType=VARCHAR},
 			</if>
-			<if test="entranceTime!=null">
-				ENTRANCETIME = #{entranceTime,jdbcType=BIGINT},
+			<if test="classPlace!=null and classPlace!=''">
+				CLASSPLACE = #{classPlace,jdbcType=VARCHAR},
 			</if>
-			<if test="collegeId!=null">
-				COLLEGEID = #{collegeId,jdbcType=BIGINT},
+			<if test="classWeekly!=null and classWeekly!=''">
+				CLASSWEEKLY = #{classWeekly,jdbcType=VARCHAR},
 			</if>
-			<if test="passwd!=null and passwd!=''">
-				PASSWD = #{passwd,jdbcType=VARCHAR},
+			<if test="curriculumType!=null">
+				CURRICULUMTYPE = #{curriculumType,jdbcType=SMALLINT},
 			</if>
-			<if test="roleId!=null">
-				ROLEID = #{roleId,jdbcType=BIGINT}
+			<if test="credit!=null and credit!=''">
+				CREDIT = #{credit,jdbcType=VARCHAR}
 			</if>
 		</trim>
 		where ID = #{id,jdbcType=BIGINT}

@@ -10,7 +10,7 @@ import org.springframework.stereotype.Repository;
  * @author jack
  * 下午4:43:16
  */
-@Repository("teacherMapper")
+@Repository("managerMapper")
 public interface ManagerMapper {
 
 	Boolean deleteByPrimaryKey(Long id);
